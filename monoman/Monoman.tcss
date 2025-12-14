@@ -1,0 +1,189 @@
+/* Monoman TUI Styles */
+
+/* Base screen */
+Screen {
+    background: #0f1525;
+}
+
+/* Top bar */
+TopBar {
+    dock: top;
+    height: 1;
+    background: #1a1f2e;
+    color: #91abec;
+    padding: 0 1;
+}
+
+/* Main content area */
+#main-content {
+    padding: 0 1;
+}
+
+/* Panel containers */
+.panel-container {
+    margin-bottom: 1;
+    padding: 0;
+}
+
+/* Dashboard panel */
+#dashboard-panel {
+    height: auto;
+    background: #131a2c;
+    border: solid #2d3748;
+    padding: 0 1;
+}
+
+/* Metric panels */
+#cpu-panel,
+#memory-panel,
+#disk-panel,
+#network-panel,
+#gpu-panel,
+#temperature-panel {
+    height: auto;
+    background: #131a2c;
+    border: solid #2d3748;
+    padding: 0 1;
+}
+
+/* Graphs panel - historical charts */
+#graphs-panel {
+    height: auto;
+    background: #131a2c;
+    border: solid #54efae;
+    padding: 1 1;
+}
+
+/* Process panel - taller */
+#processes-panel {
+    height: auto;
+    min-height: 20;
+    background: #131a2c;
+    border: solid #2d3748;
+    padding: 0 1;
+}
+
+/* Footer */
+#footer {
+    dock: bottom;
+    height: 1;
+    background: #1a1f2e;
+    color: #6b7280;
+    padding: 0 1;
+}
+
+/* Help modal */
+HelpModal {
+    align: center middle;
+}
+
+HelpModal > Container {
+    width: 70;
+    height: auto;
+    max-height: 80%;
+    background: #1a1f2e;
+    border: thick #91abec;
+    padding: 1 2;
+}
+
+HelpModal #title {
+    text-align: center;
+    text-style: bold;
+    color: #91abec;
+    padding-bottom: 1;
+}
+
+HelpModal #content {
+    height: auto;
+    max-height: 50;
+}
+
+HelpModal .section {
+    color: #54efae;
+    text-style: bold;
+    padding-top: 1;
+}
+
+HelpModal .shortcut {
+    padding-left: 2;
+}
+
+HelpModal Button {
+    margin-top: 1;
+    width: 100%;
+}
+
+/* Filter input modal */
+#filter-modal {
+    align: center middle;
+}
+
+#filter-modal > Container {
+    width: 50;
+    height: auto;
+    background: #1a1f2e;
+    border: thick #91abec;
+    padding: 1 2;
+}
+
+#filter-modal Input {
+    margin: 1 0;
+}
+
+/* Scrollable areas */
+VerticalScroll {
+    scrollbar-background: #1a1f2e;
+    scrollbar-color: #4a5568;
+    scrollbar-color-hover: #718096;
+    scrollbar-color-active: #91abec;
+}
+
+/* DataTable styling */
+DataTable {
+    background: #131a2c;
+}
+
+DataTable > .datatable--header {
+    background: #1a1f2e;
+    color: #91abec;
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: #2d3748;
+}
+
+DataTable > .datatable--odd-row {
+    background: #0f1525;
+}
+
+/* Button styling */
+Button {
+    background: #2d3748;
+    color: #e9e9e9;
+    border: none;
+}
+
+Button:hover {
+    background: #4a5568;
+}
+
+Button.-primary {
+    background: #91abec;
+    color: #0f1525;
+}
+
+Button.-primary:hover {
+    background: #a3b8ef;
+}
+
+/* Input styling */
+Input {
+    background: #0f1525;
+    border: solid #4a5568;
+    color: #e9e9e9;
+}
+
+Input:focus {
+    border: solid #91abec;
+}

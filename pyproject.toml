@@ -1,0 +1,92 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "monoman"
+version = "0.1.0"
+description = "A terminal-based system performance monitor inspired by Dolphie"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "davidcjones79" }
+]
+keywords = [
+    "monitoring",
+    "system",
+    "performance",
+    "tui",
+    "terminal",
+    "cpu",
+    "memory",
+    "disk",
+    "network",
+    "gpu",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "textual>=0.85.0",
+    "rich>=13.9.0",
+    "psutil>=6.0.0",
+    "plotext>=5.3.0",
+    "orjson>=3.10.0",
+    "zstandard>=0.23.0",
+    "nvidia-ml-py>=12.0.0;sys_platform!='darwin'",
+    "tomli>=2.0.0;python_version<'3.11'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "mypy>=1.11.0",
+    "ruff>=0.6.0",
+]
+web = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "websockets>=13.0",
+]
+
+[project.scripts]
+monoman = "monoman.App:main"
+monoman-web = "monoman.web:main"
+
+[project.urls]
+Homepage = "https://github.com/davidcjones79/monoman"
+Repository = "https://github.com/davidcjones79/monoman"
+
+[tool.hatch.build.targets.wheel]
+packages = ["monoman"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
